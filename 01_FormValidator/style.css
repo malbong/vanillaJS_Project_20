@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --label-color: #777777;
+  --submitBtn-color: #3498db;
+  --white: #f5f5f5;
+  --invalid-color: #e74c3c;
+  --valid-color: #2ecc71;
+  --input-border-color: #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 400px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  padding: 2rem 2.5rem;
+}
+
+.form__header {
+  margin: 0;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.form__inputs {
+  margin-bottom: 0.5rem;
+}
+.form__inputs label {
+  margin-bottom: 0.25rem;
+  display: block;
+  color: var(--label-color);
+}
+.form__inputs input {
+  border: 2px solid var(--input-border-color);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.form__inputs input:focus {
+  outline: none;
+  border: 2px solid var(--label-color);
+}
+
+.form__submitBtn {
+  background-color: var(--submitBtn-color);
+  border: 2px solid var(--submitBtn-color);
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.form__inputs.invalid input {
+  border-color: var(--invalid-color);
+}
+.form__inputs.valid input {
+  border-color: var(--valid-color);
+}
+
+.form__inputs.invalid .error_message {
+  color: var(--invalid-color);
+  visibility: visible;
+}
+.error_message {
+  visibility: hidden;
+}
