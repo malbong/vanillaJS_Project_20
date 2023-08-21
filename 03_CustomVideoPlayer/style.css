@@ -36,6 +36,7 @@ body {
 
 .video__main {
   width: 60%;
+  max-width: 500px;
   background-color: var(--idle-video-background-color);
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -44,6 +45,7 @@ body {
 
 .video__controls {
   width: 60%;
+  max-width: 500px;
   background-color: #333333;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
