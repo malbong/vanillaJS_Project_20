@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --background-color: #242333;
+  --info-background-color: #201f2e;
+  --info-text-color: #777777;
+  --white: #f5f6f5;
+  --seatable-color: #444451;
+  --selected-color: #70e9f6;
+  --occupied-color: #f5f6f5;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__selector {
+  margin: 1rem 0;
+}
+
+.movie__selector #movies {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.movie__info {
+  margin: 1rem 0;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--info-background-color);
+  color: var(--info-text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie__info li {
+  list-style: none;
+  margin: 0 0.5rem;
+  display: flex;
+}
+
+.movie__info small {
+  margin-left: 2px;
+}
+
+.seat {
+  margin: 3px;
+  height: 12px;
+  width: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--seatable-color);
+}
+.seat.selected {
+  background-color: var(--selected-color);
+}
+.seat.occupied {
+  background-color: var(--occupied-color);
+}
+
+.movie__seats {
+  margin: 0;
+  margin-bottom: 2rem;
+  perspective: 1000px;
+}
+
+.movie__seats .screen {
+  background-color: var(--white);
+  width: 100%;
+  height: 70px;
+  transform: rotateX(-45deg);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.movie__seats .screen span {
+  color: var(--info-text-color);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.movie__seats .row {
+  display: flex;
+}
+.movie__seats .row .seat:nth-of-type(4n + 2) {
+  margin-right: 1rem;
+}
+.movie__seats .seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.movie__total {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.movie__total span {
+  color: var(--selected-color);
+}
+
+.movie__clearBtn {
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--info-text-color);
+  cursor: pointer;
+}
+
+.movie__clearBtn:active {
+  transform: scale(1.05);
+}
