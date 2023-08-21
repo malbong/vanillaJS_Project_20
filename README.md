@@ -8,3 +8,13 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - create form by html/css
 - use flex box
 - script that validates form data
+
+### 02 - Movie Seat Booking: [Demo site](https://htmlpreview.github.io/?https://github.com/malbong/vanillaJS_Project_20/blob/main/02_MovieSeatBooking/index.html)
+
+- create UI by flex box for seat selections
+- user can select some of movie
+- user can cancle seats
+- display total seats count and price
+- save seats based on the type of movie
+- Independent when refreshed
+- make clear button
