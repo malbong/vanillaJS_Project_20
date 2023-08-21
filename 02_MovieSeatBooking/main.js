@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const accupied = "00 02 12 13 43 44 55 94 95 58 39 40".split(" ");
   const movieSeats = document.querySelector(".movie__seats");
 
   const seatsRoute = function () {
@@ -9,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let j = 0; j < 10; ++j) {
         const seat = document.createElement("div");
         seat.className = "seat";
+        if (accupied.indexOf(`${i}${j}`) !== -1) {
+          seat.classList.add("occupied");
+        }
         rowSeats.appendChild(seat);
       }
 
@@ -74,6 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   movieSeats.addEventListener("click", (event) => {
+    console.log(event.target);
+    console.log(event.currentTarget);
     if (
       event.target.classList.contains("seat") &&
       !event.target.classList.contains("occupied")
