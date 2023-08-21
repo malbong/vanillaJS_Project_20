@@ -43,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
           seat.classList.remove("selected");
         }
       });
+    } else {
+      seats.forEach((seat, index) => {
+        seat.classList.remove("selected");
+      });
     }
     updateTotal();
   };
