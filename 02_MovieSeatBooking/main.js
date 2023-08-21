@@ -78,8 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   movieSeats.addEventListener("click", (event) => {
-    console.log(event.target);
-    console.log(event.currentTarget);
     if (
       event.target.classList.contains("seat") &&
       !event.target.classList.contains("occupied")
