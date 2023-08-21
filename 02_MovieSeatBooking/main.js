@@ -1,5 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   const movieSeats = document.querySelector(".movie__seats");
+
+  const seatsRoute = function () {
+    for (let i = 0; i < 10; ++i) {
+      const rowSeats = document.createElement("div");
+      rowSeats.className = "row";
+
+      for (let j = 0; j < 10; ++j) {
+        const seat = document.createElement("div");
+        seat.className = "seat";
+        rowSeats.appendChild(seat);
+      }
+
+      movieSeats.appendChild(rowSeats);
+    }
+  };
+  seatsRoute();
+
   const totalCount = document.querySelector(".movie__total #count");
   const totalPrice = document.querySelector(".movie__total #price");
   const selectedMovie = document.querySelector("#movies");
@@ -44,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     } else {
-      seats.forEach((seat, index) => {
+      seats.forEach((seat) => {
         seat.classList.remove("selected");
       });
     }

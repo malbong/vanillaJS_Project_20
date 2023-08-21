@@ -104,7 +104,10 @@ body {
 .movie__seats .row {
   display: flex;
 }
-.movie__seats .row .seat:nth-of-type(4n + 2) {
+.movie__seats .row .seat:nth-of-type(2) {
+  margin-right: 1rem;
+}
+.movie__seats .row .seat:nth-last-of-type(3) {
   margin-right: 1rem;
 }
 .movie__seats .seat:not(.occupied):hover {
