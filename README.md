@@ -18,3 +18,4 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - save seats based on the type of movie
 - Independent when refreshed
 - make clear button
+- route seats
