@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+:root {
+  --white: #f5f6f5;
+  --idle-video-background-color: #0f0f0f;
+  --controls-background-color: #333333;
+
+  --play-color: #28a745;
+  --stop-color: #dc3545;
+  --pause-color: var(--white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Questrial", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgb(195, 195, 195) 0%,
+    rgb(123, 123, 123) 33%,
+    rgb(86, 86, 86) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+}
+
+.video__main {
+  width: 60%;
+  background-color: var(--idle-video-background-color);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.video__controls {
+  width: 60%;
+  background-color: #333333;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video__controls i {
+  font-size: 2rem;
+}
+
+.video__controls i.fa-play {
+  color: var(--play-color);
+}
+.video__controls i.fa-pause {
+  color: var(--pause-color);
+}
+.video__controls i.fa-stop {
+  color: var(--stop-color);
+}
+
+.video__controls #timestamp {
+  margin-left: 1rem;
+}
+
+.video__controls button {
+  padding: 1px 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.video__controls #progress {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .video__main,
+  .video__controls {
+    width: 90%;
+  }
+}
