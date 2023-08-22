@@ -28,3 +28,11 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - display timestamps
 - use external progress.css
 - utilize and learn about the HTMLMediaElement API
+
+### 04 - Exchange Rate Calculator: [Demo site](https://malbong.github.io/vanillaJS_Project_20/04_ExchangeRateCalculator/index.html)
+
+- create a currency converter
+- get info about exchange rates using an external API
+  - experience network communication
+  - experience callback structure for asynchronous communication without using Promise, async/await
+- route the details of the select options using js
