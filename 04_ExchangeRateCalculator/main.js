@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const http = new XMLHttpRequest();
-  const url = `https://v6.exchangerate-api.com/v6/6cfc74845d3c8d9c15c787f8/latest/$CUR`;
+  const url = `https://open.er-api.com/v6/latest/$CUR`;
 
   const curFrom = document.querySelector("#from");
   const curTo = document.querySelector("#to");
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     http.send();
     http.onreadystatechange = () => {
       if (http.readyState === 4 && http.status === 200) {
+        console.log(JSON.stringify(JSON.parse(http.response), null, 2));
         callback(JSON.parse(http.response));
       }
     };
@@ -41,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const init = function () {
     request("AED", (res) => {
-      routeSelect(curFrom, res.conversion_rates);
-      routeSelect(curTo, res.conversion_rates);
+      routeSelect(curFrom, res.rates);
+      routeSelect(curTo, res.rates);
       updateDate(new Date(res.time_last_update_utc));
       calc();
     });
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const calc = function () {
     request(curFrom.value, (res) => {
-      const rate = res.conversion_rates[curTo.value];
+      const rate = res.rates[curTo.value];
       rateText.textContent = `1 ${curFrom.value} = ${rate} ${curTo.value}`;
       amountTo.value = (amountFrom.value * rate).toFixed(2);
     });
