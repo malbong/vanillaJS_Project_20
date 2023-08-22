@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchange Rate Calculator</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img class="calc__image" src="./img/money.png" alt="money_logo" />
+      <h1 class="calc__heading">Exchange Rate Calculator</h1>
+      <p class="calc__info">
+        Choose the currency and the amounts to get the exchange rate
+      </p>
+      <div class="calc__container">
+        <div class="calc__currency__container">
+          <select id="from">
+            <option value="USD">USD</option>
+          </select>
+          <input type="number" id="amount-from" placeholder="0" value="1" />
+        </div>
+        <div class="calc__swap__container">
+          <button class="calc__swapBtn">Swap</button>
+          <p id="calc__rate"></p>
+        </div>
+        <div class="calc__currency__container">
+          <select id="to">
+            <option value="KRW">KRW</option>
+          </select>
+          <input type="number" id="amount-to" value="" />
+        </div>
+        <small class="rate__update__date">
+          latest update: <span>DD/MM/YYYY-HH</span>
+        </small>
+      </div>
+    </div>
+  </body>
+</html>
