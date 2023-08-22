@@ -33,6 +33,13 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 
 - create a currency converter
 - get info about exchange rates using an external API
-  - experience network communication
-  - experience callback structure for asynchronous communication without using Promise, async/await
+- experience network communication
+- experience callback structure for asynchronous communication without using Promise, async/await
 - route the details of the select options using js
+
+### 05 - DOM Array Methods: [Demo site](https://malbong.github.io/vanillaJS_Project_20/05_DOMArrayMethods/index.html)
+
+- create a random user generator using an [randomuser.me API](https://randomuser.me/)
+- utilize various array methods
+- manipulate the DOM API
+- manage users data
