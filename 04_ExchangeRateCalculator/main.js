@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     http.send();
     http.onreadystatechange = () => {
       if (http.readyState === 4 && http.status === 200) {
-        console.log(JSON.stringify(JSON.parse(http.response), null, 2));
         callback(JSON.parse(http.response));
       }
     };
