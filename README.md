@@ -43,3 +43,11 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - utilize various array methods
 - manipulate the DOM API
 - manage users data
+
+### 06 - My Landing Page: [Demo site](https://malbong.github.io/vanillaJS_Project_20/06_MyLandingPage/index.html)
+
+- create a modal window
+- implement a responsive navbar
+- close the navbar upon clicking another element
+- flexible body when the navbar is open
+- learn about event bubbling and capturing
