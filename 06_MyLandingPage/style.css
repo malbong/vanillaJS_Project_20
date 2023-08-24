@@ -23,8 +23,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
-
   min-height: 100vh;
+}
+
+body.modal__active {
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
 }
 
 nav {
@@ -36,7 +43,6 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 100;
   height: 100%;
 
   transform: translateX(-200px);
@@ -74,6 +80,7 @@ nav ul li a:hover {
 
 .container {
   transition: margin-left 0.3s linear;
+  position: relative;
 }
 
 .container.nav__active {
@@ -87,7 +94,6 @@ header {
   text-align: center;
   padding: 2rem;
   font-size: 1.25em;
-  position: relative;
 }
 header h1 {
   margin: 0;
@@ -110,7 +116,6 @@ header .signupBtn {
   border: 2px solid var(--signup-color);
   padding: 0.75rem 1.75rem;
 }
-
 header .toggleBtn {
   position: absolute;
   top: 1rem;
@@ -126,35 +131,121 @@ main {
   padding: 1rem;
 }
 
+.modal__container {
+  background-color: rgba(0, 0, 0, 0.6);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.3s linear;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal__container.modal__active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container form {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.modal__header {
+  background-color: var(--header-color);
+  color: var(--white);
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__header h3 {
+  margin: 0;
+}
+
+.modal__closeBtn {
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--white);
+}
+
+.modal__main {
+  padding: 1rem;
+}
+
+.modal__inputs {
+  margin: 1rem 0;
+}
+
+.modal__inputs label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.modal__inputs input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid gray;
+}
+
+.modal__submitBtn {
+  background-color: var(--signup-color);
+  border: 2px solid var(--signup-color);
+  border-radius: 0.25rem;
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
 /*
-display: flex하면 container 내부의 item이 가로폭을 "화면 사이즈"만큼 채움
+flex container안에 하나의 item만 있을 때 width를 100%로 하면 자동으로 화면을 가득 채움
 -> margin이 있어도 가로휠이 생기지 않는다는 뜻
+-> 사실 flex-grow 속성을 사용하는게 맞는 것 같음
 .item {
   margin-left: 1000px;
   width: 100%
   background-color: red;
 }
 
-기본적으로 block 요소는 margin을 포함하여 화면 사이즈만큼 채우고 가로휠 생기지 않음
+기본적으로 block 요소는 width를 지정하지 않고 margin을 설정하면 가로 휠을 생기지 않음
+하지만 width를 100% 같이 사용하면 가로휠이 생김
+- 가로휠이 생기지 않음
 #block_box {
   margin: 1000px;
 }
-
-가로휠이 생기는 경우
+- 가로휠이 생기는 경우
 #block_box {
   margin: 1000px;
   width: 100% or 100vh;
 }
 
 flex container와 items의 height: 100%
--> items-row로 있을 때
+-> items가 flex-row로 있을 때
 - container가 min-height:100vh 이면 item은 자동으로 100vh stretch함
 - 하지만 item에 height:100% 을 하면 height가 적용되지 않는 문제가 존재
+- 재조정으로 flex에서는 width, height를 매우 조심해야함
 - 그냥 두면 height가 100vh니까 그냥 사용하면 됨
 cf) 근데 flex container가 position:absolute같이 박스의 요소를 변경시킨다면, 그땐 height같은 것이 잘 먹을 것
 
-%와 viewport 그리고 px을 섞어쓸 때 나오는데, 규칙을 만들어야 할 듯
-화면 요소로 계산해야 하는 큰 컨테이너 같은 경우 viewport 사용할 것
+%와 viewport 그리고 px을 섞어쓸 때 나오는데, 정의를 다시 해야 함
+-> px 절대 값
+-> % 부모 박스 크기
+-> viewport 화면 현재 크기
+-> flex .items에서 쓰면 크기는 재조정 들어감에 주의
 -> 기본적인 body같은 높이: min-height: 100vh;
 -> flex container에서 width/height는 일반적인 px, % 계산 방식과 다름 -> 재조정한다고 함
 .boxA {
@@ -169,31 +260,54 @@ cf) 근데 flex container가 position:absolute같이 박스의 요소를 변경�
 
 flex container에서 width px 지정 후 다른 박스가 나머지 공간 차지하기
 .boxA {
-  width: 200px
+  width: 200px;
 }
 .boxB {
-  flex: 1
+  flex: 1;
+    or
+  width: calc(100% - 200px);
 }
 // flex: 1 -> grow 1, shrink 1 basis 0 을 의미
 // flex-grow 남는 공간 차지
 // flex-shrink 부족한 공간에서 줄어드는 비율
-// flex-basis 초기 크기
+// flex-basis "초기" 크기
 
 width VS flex-basis 의 차이
 width 너비를 직접 지정
-flex-basis 컨테이너 내에서 아이템의 초기 크기 -> 크기를 결정하는 단계에서 출발크기를 나타내는 것 -> 변경될 수 있음
+flex-basis 컨테이너 내에서 아이템의 초기 크기
+-> 크기를 결정하는 단계에서 출발크기를 나타내는 것
+-> 변경될 수 있음
 
 hover시 text-decoration: underline
 
 display: none VS display: block
 visibility: hidden VS visibility: visible
+opicity: 0 VS opicity: 1
 
-transform :
-translate 
-transition 
+transform :크기 혹은 동작 변화
+  scale 크기
+  translate 동작
+transition: prop duration func
 
 Q) 만들어보기
 1) 원문 덮으면서 navbar나오기 -> 원문이 가려짐
 2) 원문 전체가 "이동"하면서 navbar 나오기 -> 가로휠 생김
 3) 원문 전체가 폭을 수정하고 navbar 나오기 -> flexible
+
+overflow: hidden visible
+- form
+- modal
+
+modal 만들기
+1) container 새로 만들고
+fixed + topleft0 + widthheight100% + flex 설정 + 투명도 설정
+2) form만들기
+꾸미기
+3) visibility 설정 + opicity
+-> transition은 토글 같은 속성은 안되고, 숫자값으로 처리할 수 있는 것만 되는 듯
+
+container를 fixed로 할지, absolute로 설정할지는 상황에 따라서 결정
+-> 개인적으로 fixed로 화면을 모두 차지하는게 나아보임 -> modal의 기본
+
+
 */
