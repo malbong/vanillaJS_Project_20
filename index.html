@@ -6,33 +6,28 @@
     <title>Document</title>
   </head>
   <style>
-    body {
-      min-height: 100vh;
-      background-color: aqua;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
+    .Parent {
+      position: relative;
+      background-color: red;
     }
-    .message {
-      background-color: aquamarine;
+    .A {
       width: 100px;
       height: 100px;
-      position: fixed;
-      bottom: -200px;
-      transition: transform 0.2s linear;
+      background-color: green;
     }
-    .message.active {
-      transform: translateY(-200px);
+    .B {
+      width: 50px;
+      height: 50px;
+      background-color: blueviolet;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   </style>
   <body>
-    <div class="A"></div>
-    <div class="message">Hello</div>
-    <script>
-      window.addEventListener("click", () => {
-        document.querySelector(".message").classList.toggle("active");
-      });
-    </script>
+    <div class="Parent">
+      <div class="A">A</div>
+      <div class="B">B</div>
+    </div>
   </body>
 </html>

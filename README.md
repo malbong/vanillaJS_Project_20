@@ -54,7 +54,7 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 
 ### 07 - Hangman Game: [Demo site](https://malbong.github.io/vanillaJS_Project_20/07_HangmanGame/index.html)
 
-- learn how to fetch random words using an API
+- learn how to fetch random words using an API :[random-word API](https://random-word-api.herokuapp.com/home)
 - create SVG graphics to visualize the Hangman figure
 - construct a Hangman game based on keyboard events
 - interact with the game using reset and answer buttons

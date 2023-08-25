@@ -83,18 +83,20 @@ body {
   border-radius: 0.5rem;
 }
 .meal-info p {
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   line-height: 1.5;
 }
 .meal-info .ingredients ul {
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .meal-info .ingredients li {
   list-style: none;
   background-color: var(--white);
   border-radius: 0.5rem;
   color: #000;
-  display: inline-block;
   padding: 5px;
   margin: 5px;
   font-size: 0.75rem;
@@ -176,15 +178,8 @@ body {
   .header #search-input {
     width: 100%;
   }
+  .meal-info .image {
+    width: 200px;
+    height: 200px;
+  }
 }
-
-/*
-form에 border-radius 설정 후 overflow-hidden 해놓고
-가장 자리에 있는 input을 그냥 사용하면서 하게되면 focus시에 outline이 이상하게 그려지는 문제가 존재
--> input의 focus시 들어오는 것은 outline임, 근데 outline이 범위 밖을 나갔다거나 이상하면
--> overflow:hidden은 없는지, input설정이 제대로 되어있는지 파악할 것
-
-검색창과 돋보기를 나란히 놓는 방법 -> 두 개의 요소를 나란히 놓기 -> flex
--> border-radius를 따로따로 설정해야 붙어있는 요소가 어색하지 않음
--> 부모에서 border-radius 설정하고 overflow: hidden 해놓으면 입력창 focus시 위와 같은 문제 발생
-*/
