@@ -59,3 +59,12 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - construct a Hangman game based on keyboard events
 - interact with the game using reset and answer buttons
 - handle duplicate inputs and create a game-ending modal
+
+### 08 - Meal Finder App: [Demo site](https://malbong.github.io/vanillaJS_Project_20/08_MealFinderApp/index.html)
+
+- utilize the Meal Finder API :[themealdb.com](https://www.themealdb.com/api.php)
+- display meals based on user input
+- implement hover effects for food images
+- show detailed information when clicking on a food image
+- implement a button to display random meal details
+- code DOM rendering without using innerHTML
