@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameAnswerBtn = document.querySelector(".game__container .answerBtn");
 
   const updateDOM = function (isWrong) {
-    word.removeChild();
     // word render
     word.innerHTML = "";
     for (let i = 0; i < randomWord.length; ++i) {
