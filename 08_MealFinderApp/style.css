@@ -1,0 +1,190 @@
+:root {
+  --white: #f6f5f6;
+  --background-color: #2d2013;
+  --border-color: var(--white);
+  --image-border-color: #df9850;
+  --dashed-color: #df9850;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background-color: var(--background-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white);
+  text-align: center;
+
+  min-width: 300px;
+}
+
+.header .input-container {
+  display: flex;
+}
+.header .search-form {
+  display: flex;
+}
+.header #search-input {
+  padding: 8px 10px;
+  width: 300px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border: 1px solid var(--border-color);
+}
+.header .input-container button {
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+}
+.header .input-container .submitBtn {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.header .input-container .randomBtn {
+  margin-left: 10px;
+  border-radius: 0.25rem;
+}
+.header a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.meal-info {
+  display: none;
+  max-width: 800px;
+  width: 70%;
+}
+.meal-info.active {
+  display: block;
+}
+.meal-info .image {
+  margin: 15px;
+  width: 300px;
+  height: 300px;
+  border: 4px solid var(--image-border-color);
+  border-radius: 0.25rem;
+}
+.meal-info .info {
+  margin: 20px;
+  padding: 10px;
+  border: 2px dashed var(--dashed-color);
+  border-radius: 0.5rem;
+}
+.meal-info p {
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+.meal-info .ingredients ul {
+  padding: 0;
+}
+.meal-info .ingredients li {
+  list-style: none;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  color: #000;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.search-results {
+  display: none;
+  max-width: 800px;
+}
+.search-results.active {
+  display: block;
+}
+.search-results .message {
+  margin: 2rem;
+}
+.search-results .meals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.search-results .meal {
+  width: 180px;
+  height: 180px;
+  border-radius: 0.125rem;
+  border: 4px solid var(--image-border-color);
+  cursor: pointer;
+
+  position: relative;
+}
+.search-results .meal img {
+  width: 100%;
+  height: 100%;
+}
+
+.search-results .meal .name {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.search-results .meal .name:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .search-results .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-results .meals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search-results .meal {
+    width: 210px;
+    height: 210px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .search-results .meals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-results .meal {
+    width: 300px;
+    height: 300px;
+  }
+  .header #search-input {
+    width: 100%;
+  }
+}
+
+/*
+form에 border-radius 설정 후 overflow-hidden 해놓고
+가장 자리에 있는 input을 그냥 사용하면서 하게되면 focus시에 outline이 이상하게 그려지는 문제가 존재
+-> input의 focus시 들어오는 것은 outline임, 근데 outline이 범위 밖을 나갔다거나 이상하면
+-> overflow:hidden은 없는지, input설정이 제대로 되어있는지 파악할 것
+
+검색창과 돋보기를 나란히 놓는 방법 -> 두 개의 요소를 나란히 놓기 -> flex
+-> border-radius를 따로따로 설정해야 붙어있는 요소가 어색하지 않음
+-> 부모에서 border-radius 설정하고 overflow: hidden 해놓으면 입력창 focus시 위와 같은 문제 발생
+*/
