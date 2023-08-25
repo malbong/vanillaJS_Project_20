@@ -63,7 +63,7 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 ### 08 - Meal Finder App: [Demo site](https://malbong.github.io/vanillaJS_Project_20/08_MealFinderApp/index.html)
 
 - utilize the Meal Finder API :[themealdb.com](https://www.themealdb.com/api.php)
-- display meals based on user input
+- display meals based on user input (25 foods limited API)
 - implement hover effects for food images
 - show detailed information when clicking on a food image
 - implement a button to display random meal details
