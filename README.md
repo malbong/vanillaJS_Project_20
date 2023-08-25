@@ -51,3 +51,11 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - close the navbar upon clicking another element
 - flexible body when the navbar is open
 - learn about event bubbling and capturing
+
+### 07 - Hangman Game: [Demo site](https://malbong.github.io/vanillaJS_Project_20/07_HangmanGame/index.html)
+
+- learn how to fetch random words using an API
+- create SVG graphics to visualize the Hangman figure
+- construct a Hangman game based on keyboard events
+- interact with the game using reset and answer buttons
+- handle duplicate inputs and create a game-ending modal
