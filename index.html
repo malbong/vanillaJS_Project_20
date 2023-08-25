@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: aqua;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .message {
+      background-color: aquamarine;
+      width: 100px;
+      height: 100px;
+      position: fixed;
+      bottom: -200px;
+      transition: transform 0.2s linear;
+    }
+    .message.active {
+      transform: translateY(-200px);
+    }
+  </style>
+  <body>
+    <div class="A"></div>
+    <div class="message">Hello</div>
+    <script>
+      window.addEventListener("click", () => {
+        document.querySelector(".message").classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

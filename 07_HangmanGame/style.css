@@ -19,8 +19,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   overflow: hidden;
 }
+
 header {
   margin-bottom: 5rem;
 }
@@ -38,6 +40,7 @@ header p {
   padding: 25px;
 
   position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -146,15 +149,3 @@ button {
 .end__message .retryBtn {
   background-color: var(--background-color);
 }
-
-/*
-svg prop
-text-align: right 로 오른쪽 정렬 -> 길어져도 오른쪽에 딱 붙는 것 생각
-
-하나의 단어에서 한글자씩 중요할 때, 단어를 flex container, 글자를 flex items으로 관리하면 편하다
-그 단어에서 밑 줄처럼 만들고 싶다면 text-decoration: underline도 있지만 border-bottom도 있음에 명심해라
-
-아래에서 올라오는 알림창 같은 경우에서
-  transform: translateY(-150px) 이나 bottom: -150px 하면 스크롤이 생기기 마련
-  즉, 아래로 숨기는 것은 스크롤이 생김 -> 없애는 방법은 ? -> body overflow: hidden
-*/
