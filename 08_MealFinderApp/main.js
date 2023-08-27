@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const resultsContainer = document.querySelector(".search-results");
 
-  const initContainer = function () {};
-
   const setTitle = function (name) {
     const title = document.createElement("h1");
     title.className = "title";
