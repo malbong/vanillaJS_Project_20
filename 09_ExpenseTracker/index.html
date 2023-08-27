@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Expense Tracker</h2>
+    </header>
+    <main>
+      <div class="total-container">
+        <span>YOUR BALANCE</span>
+        <h1 id="total">$0.00</h1>
+        <div class="inc-exp-container">
+          <div class="inc-exp">
+            <span>INCOME</span>
+            <p id="income">$0.00</p>
+          </div>
+          <div class="inc-exp">
+            <span>EXPENSE</span>
+            <p id="expense">$0.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-container">
+        <h3 class="subtitle">History</h3>
+        <ul class="history-list"></ul>
+      </div>
+      <div class="input-container">
+        <h3 class="subtitle">Add new transaction</h3>
+        <form>
+          <div class="inputs">
+            <label for="name">Text</label>
+            <input id="name" type="text" placeholder="Enter Text..." />
+          </div>
+          <div class="inputs">
+            <label for="amount"
+              >Amount
+              <small>(negative - expense, positive - income)</small>
+            </label>
+            <input id="amount" type="number" placeholder="Enter Amount..." />
+          </div>
+          <button type="submit" id="addBtn">Add transaction</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

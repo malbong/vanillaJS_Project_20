@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --background-color: #f7f7f7;
+  --income-color: #2fcc71;
+  --expense-color: #c0392b;
+  --deleteBtn-color: #e74b3c;
+  --addBtn-color: #9c88ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: var(--background-color);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 350px;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.total-container {
+  text-align: center;
+}
+#total {
+  margin: 0;
+}
+.inc-exp-container {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  text-align: center;
+
+  display: flex;
+}
+.inc-exp {
+  width: 100%;
+  font-weight: bold;
+}
+.inc-exp:first-child {
+  border-right: 1px solid #dedede;
+}
+.inc-exp p {
+  margin: 0.25rem 0;
+  font-size: 1.25rem;
+}
+#income {
+  color: var(--income-color);
+}
+#expense {
+  color: var(--expense-color);
+}
+
+.subtitle {
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #bbbbbb;
+  font-size: 1.25rem;
+}
+.history-list {
+  margin: 0;
+  padding: 0;
+}
+.history {
+  list-style: none;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0.625rem 0;
+  padding: 0.625rem;
+
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history.plus {
+  border-right: 5px solid var(--income-color);
+}
+.history.minus {
+  border-right: 5px solid var(--expense-color);
+}
+.deleteBtn {
+  position: absolute;
+  transform: translateX(-100%);
+  left: 0;
+
+  padding: 0.25rem;
+  visibility: none;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  background-color: var(--deleteBtn-color);
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+.history:hover .deleteBtn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.inputs label {
+  display: block;
+  margin: 0.625rem 0;
+}
+.inputs label small {
+  color: #bbbbbb;
+}
+.inputs input {
+  padding: 0.625rem;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid #bbbbbb;
+}
+#addBtn {
+  width: 100%;
+  background-color: var(--addBtn-color);
+  border: 0;
+  color: white;
+  cursor: pointer;
+  padding: 0.625rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
