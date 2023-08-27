@@ -68,3 +68,10 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - show detailed information when clicking on a food image
 - implement a button to display random meal details
 - code DOM rendering without using innerHTML
+
+### 09 - ExpenseTracker: [Demo site](https://malbong.github.io/vanillaJS_Project_20/09_ExpenseTracker/index.html)
+
+- create an Expense Tracker UI
+- add a transaction list to the DOM
+- implement delete button that deletes transactions
+- persist data to localStorage
