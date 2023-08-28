@@ -96,4 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.addEventListener("timeupdate", updateProgress);
   audio.addEventListener("timeupdate", updateMusicTime);
   audio.addEventListener("ended", playNextMusic);
+
+  progressOuter.addEventListener("click", setAudioCurrentTime);
 });
