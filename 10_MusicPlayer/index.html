@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <script src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/bea01f20e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Music Player</h1>
+    <div class="music-container">
+      <audio src="music/ukulele.mp3"></audio>
+      <div class="image-container">
+        <img src="images/ukulele.jpg" alt="musicImage" />
+      </div>
+      <div class="nav-container">
+        <button id="prevBtn">
+          <i class="fa-solid fa-backward"></i>
+        </button>
+        <button id="actionBtn">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button id="nextBtn">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+      </div>
+      <div class="progress-container">
+        <span id="title">ukulele</span>
+        <div class="progress-outer">
+          <div class="progress-inner" id="progressBar"></div>
+        </div>
+        <div class="progress-time">
+          <small id="curtime">00:00</small>
+          <small id="endtime">00:00</small>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

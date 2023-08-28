@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(
+    0deg,
+    rgba(247, 247, 247, 1) 23.8%,
+    rgba(252, 221, 221, 1) 92%
+  );
+}
+
+.music-container {
+  display: flex;
+  margin: 100px auto;
+  padding: 20px 30px;
+
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.image-container {
+  width: 110px;
+  position: relative;
+  z-index: 1;
+}
+
+.image-container img {
+  height: 110px;
+  width: 100%;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+
+  object-fit: cover;
+
+  animation: 3s linear infinite rotate;
+  animation-play-state: paused;
+}
+
+.music-container.active .image-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image-container::after {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+
+  left: 55px;
+  bottom: 55px;
+  transform: translate(-50%, 50%);
+  position: absolute;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+.nav-container button {
+  border: 0;
+  background-color: transparent;
+  color: #dfdbdf;
+  margin: 0 20px;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+#actionBtn {
+  font-size: 30px;
+  color: #cdc1d0;
+}
+
+.progress-container {
+  padding: 10px 15px 10px 150px;
+  width: calc(100% - 60px);
+  background-color: #fcf6f6;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  position: absolute;
+  top: 0;
+
+  transition: all 0.3s linear;
+  transform: translateZ(-10px);
+}
+.music-container.active .progress-container {
+  transform: translateZ(0);
+  transform: translateY(-100%);
+}
+#title {
+  display: block;
+}
+.progress-outer {
+  margin: 10px 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  height: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.progress-inner {
+  height: 100%;
+  width: 0%;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.progress-time {
+  display: flex;
+  justify-content: space-between;
+  color: #777777;
+}
