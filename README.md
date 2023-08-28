@@ -75,3 +75,10 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - add a transaction list to the DOM
 - implement delete button that deletes transactions
 - persist data to localStorage
+
+### 10 - MusicPlayer: [Demo site](https://malbong.github.io/vanillaJS_Project_20/10_MusicPlayer/index.html)
+
+- create a Music Player UI
+- implement audio contorl buttons
+- implement audio progress events
+- implement audio time system
