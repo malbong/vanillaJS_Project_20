@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressInner.style.width = `${100 * (currentTime / duration)}%`;
   };
 
-  const setMusicTime = function (event) {
+  const setAudioCurrentTime = function (event) {
     const duration = audio.duration;
     audio.currentTime =
       (event.offsetX / event.currentTarget.offsetWidth) * duration;
@@ -96,6 +96,4 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.addEventListener("timeupdate", updateProgress);
   audio.addEventListener("timeupdate", updateMusicTime);
   audio.addEventListener("ended", playNextMusic);
-
-  progressOuter.addEventListener("click", setMusicTime);
 });
