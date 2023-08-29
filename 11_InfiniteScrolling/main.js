@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let currentPage = 0;
+  let currentPage = 1;
   const pageSize = 5;
 
   const main = document.querySelector("main");
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `https://jsonplaceholder.typicode.com/posts?_page=${currentPage}&_limit=${pageSize}`
       );
       const posts = await res.json();
+      currentPage++;
       return posts;
     } catch (exception) {
       console.error(exception);
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const setPost = function (post) {
+    // paginate
     const section = document.createElement("section");
     section.className = "article-container";
     section.innerHTML = `<div class="article-number"><span>${post.id}<span></div>
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showPosts = async function () {
-    currentPage++;
     const posts = await getPosts();
 
     posts.forEach((post) => {
@@ -62,12 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollEventHandler = function (event) {
     const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
     if (Math.ceil(clientHeight + scrollTop) >= scrollHeight) {
+      window.removeEventListener("scroll", scrollEventHandler);
+
       loaderContainer.classList.add("active");
+
       setTimeout(() => {
         loaderContainer.classList.remove("active");
       }, 700);
-      setTimeout(() => {
-        showPosts();
+
+      setTimeout(async () => {
+        await showPosts();
+        window.addEventListener("scroll", scrollEventHandler);
       }, 1000);
     }
   };
