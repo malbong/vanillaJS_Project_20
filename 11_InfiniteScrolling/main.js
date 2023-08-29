@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return posts;
     } catch (exception) {
       console.error(exception);
+      return [];
     }
   };
 
   const setPost = function (post) {
-    // paginate
     const section = document.createElement("section");
     section.className = "article-container";
     section.innerHTML = `<div class="article-number"><span>${post.id}<span></div>
@@ -35,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const showPosts = async function () {
     const posts = await getPosts();
 
-    posts.forEach((post) => {
-      setPost(post);
-    });
+    posts.forEach(setPost);
   };
 
   const filterPost = function (event) {
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  const scrollEventHandler = function (event) {
+  const scrollEventHandler = function () {
     const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
     if (Math.ceil(clientHeight + scrollTop) >= scrollHeight) {
       window.removeEventListener("scroll", scrollEventHandler);
