@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --white: #f6f6f6;
+  --base-color: #296ca8;
+  --article-background-color: #4892d3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+
+  background-color: var(--base-color);
+  color: var(--white);
+  min-height: 105vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 100px;
+}
+
+header,
+main {
+  max-width: 80%;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+}
+#filter {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.article-container {
+  background-color: var(--article-background-color);
+  margin: 2.5rem 0;
+  padding: 1.25rem;
+  position: relative;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.article-number {
+  background-color: var(--white);
+  color: var(--base-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article-main {
+  margin-left: 1.25rem;
+}
+.article-main .article-title {
+  margin: 0;
+}
+.article-main .article-body {
+  margin-bottom: 0;
+}
+
+.loader-container {
+  position: fixed;
+  bottom: 50px;
+
+  display: flex;
+}
+.loader-circle {
+  width: 10px;
+  height: 10px;
+  background-color: var(--white);
+  margin: 5px;
+  border-radius: 50%;
+
+  visibility: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.loader-container.active .loader-circle {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes loading {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.loader-circle:nth-of-type(1) {
+  animation: 0.5s linear infinite loading;
+}
+.loader-circle:nth-of-type(2) {
+  animation: 0.5s linear 0.1s infinite loading;
+}
+.loader-circle:nth-of-type(3) {
+  animation: 0.5s linear 0.2s infinite loading;
+}
