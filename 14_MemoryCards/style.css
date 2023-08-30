@@ -67,6 +67,7 @@ button:active {
 .card.current {
   opacity: 1;
   cursor: pointer;
+  z-index: 2;
 }
 .card.current.show {
   transform: rotateX(180deg);
