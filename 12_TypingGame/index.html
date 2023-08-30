@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/bea01f20e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="setting-container active">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="4">Easy</option>
+        <option value="3">Normal</option>
+        <option value="1.5">Hard</option>
+      </select>
+    </div>
+    <button id="toggleBtn"><i class="fa-solid fa-gear"></i></button>
+    <div class="game-container">
+      <div class="playing-container">
+        <h2 class="title">👩‍💻 Speed Typer 👨‍💻</h2>
+        <div class="time-score-container">
+          <span id="time">Time left: 10s</span>
+          <span id="score">Score: 0</span>
+        </div>
+        <div class="progress-outer">
+          <div class="progress-inner"></div>
+        </div>
+        <small>Type the following:</small>
+        <h1 id="word"></h1>
+        <input type="text" id="input" placeholder="Type the word here.." />
+      </div>
+      <div class="end-container">
+        <h2>Time ran out</h2>
+        <p id="end-score">Your final score is 0</p>
+        <button id="reloadBtn"><i class="fa-solid fa-rotate-right"></i></button>
+      </div>
+    </div>
+  </body>
+</html>
