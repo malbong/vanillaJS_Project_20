@@ -95,3 +95,10 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - implement an asyn API to get random words for typing
 - fetch random words without delay for UI
 - show ending and reload button
+
+### 14 - Memory Cards: [Demo site](https://malbong.github.io/vanillaJS_Project_20/14_MemoryCards/index.html)
+
+- create a flip card UI with CSS.
+- implement add/delete/clear buttons.
+- implement indexing navigation buttons.
+- persist memory cards to localStorage when refreshing.
