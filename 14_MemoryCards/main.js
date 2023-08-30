@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cards = JSON.parse(localStorage.getItem("cards"));
     if (cards === null || cards.length === 0) {
+      cards = [];
       currentIndex = 0;
       if (isFirst) makeBannerCard();
     } else {
