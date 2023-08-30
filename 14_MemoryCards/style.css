@@ -104,6 +104,16 @@ button:active {
 .inner-card.back {
   transform: rotateX(180deg);
 }
+.inner-card::after {
+  font: var(--fa-font-solid);
+  content: "\f2f1  flip";
+
+  position: absolute;
+  font-size: 1rem;
+  right: 10px;
+  top: 10px;
+  color: rgba(0, 0, 0, 0.2);
+}
 
 nav {
   display: flex;
@@ -150,6 +160,7 @@ nav {
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   padding: 1rem;
+  border-radius: 0.25rem;
 }
 .addmodal-inner header {
   display: flex;
