@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background-color: #e1ebff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:active {
+  transform: scale(1.1);
+}
+
+.cardBtn-container {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cardBtn {
+  background-color: #d3e2ff;
+  border-radius: 0.25rem;
+  border: 1px solid #aaaaaa;
+  padding: 5px 10px;
+  width: 100px;
+  margin: 0 0.25rem;
+}
+
+.card-container {
+  max-width: 400px;
+  width: 95%;
+  height: 300px;
+
+  position: relative;
+  perspective: 1000px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: transform 0.4s ease, opacity 0.2s ease;
+  background-color: #c3d7ff;
+
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+.card.current {
+  opacity: 1;
+  z-index: 10;
+  cursor: pointer;
+}
+.card.current.show {
+  transform: rotateX(180deg);
+}
+.card.next {
+  transform: translateX(50%) rotateY(-30deg);
+}
+.card.prev {
+  transform: translateX(-50%) rotateY(30deg);
+}
+
+.inner-card {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border-radius: 0.125rem;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+
+  backface-visibility: hidden;
+}
+.inner-card.front {
+  transform: rotateX(0deg);
+}
+.inner-card.back {
+  transform: rotateX(180deg);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.navBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+#index {
+  margin: 0 2rem;
+}
+
+.addmodal-outer {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+}
+.addmodal-outer.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s linear;
+}
+.addmodal-inner {
+  background-color: #c3d7ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+.addmodal-inner header {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+#closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 50%);
+  background-color: transparent;
+  border: 0;
+}
+.inputs {
+  margin: 0.5rem 0 1rem 0;
+}
+.inputs label {
+  margin: 0.5rem 0;
+  display: block;
+  text-align: left;
+  color: #666666;
+}
+.inputs textarea {
+  width: 50vw;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}

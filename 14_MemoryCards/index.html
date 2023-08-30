@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Cards</title>
+    <script src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/bea01f20e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Memory Cards</h1>
+    <div class="cardBtn-container">
+      <button class="cardBtn" id="addBtn">
+        <i class="fa-solid fa-plus"></i> Add
+      </button>
+      <button class="cardBtn" id="deleteBtn">
+        <i class="fa-solid fa-minus"></i> Delete
+      </button>
+      <button class="cardBtn" id="clearBtn">
+        <i class="fa-regular fa-trash-can"></i> Clear
+      </button>
+    </div>
+    <div class="card-container">
+    </div>
+    <nav>
+      <button class="navBtn" id="prevBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <span id="index">0 / 0</span>
+      <button class="navBtn" id="nextBtn">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </nav>
+    <div class="addmodal-outer">
+      <div class="addmodal-inner">
+        <h1>Add New Card</h1>
+        <button id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="inputs">
+          <label for="question">Question</label>
+          <textarea id="question" placeholder="Enter question.."></textarea>
+        </div>
+        <div class="inputs">
+          <label for="answer">Answer</label>
+          <textarea id="answer" placeholder="Enter Answer.."></textarea>
+        </div>
+        <button class="cardBtn" id="addCardBtn">
+          <i class="fa-solid fa-plus"></i> Add
+        </button>
+      </div>
+    </div>
+</html>
