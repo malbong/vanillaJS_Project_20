@@ -137,12 +137,19 @@ document.addEventListener("DOMContentLoaded", () => {
     init();
   };
 
-  const init = function () {
+  const makeBannerCard = function () {
+    question.value = "Memory Card?";
+    answer.value = "Click Add button!";
+    addCard();
+  };
+
+  const init = function (isFirst) {
     cardContainer.innerHTML = "";
 
     cards = JSON.parse(localStorage.getItem("cards"));
     if (cards.length === 0) {
       currentIndex = 0;
+      if (isFirst) makeBannerCard();
     } else {
       currentIndex = 1;
       cards.forEach(addCardToDOM);
@@ -163,5 +170,5 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", setPrevNavIndex);
   nextBtn.addEventListener("click", setNextNavIndex);
 
-  init();
+  init(true);
 });
