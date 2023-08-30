@@ -133,6 +133,7 @@ button:active {
   height: 5px;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 .progress-inner {
   width: 100%;
