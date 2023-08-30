@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateTime = function () {
     currentSeconds -= 0.01;
+    currentSeconds = Number(currentSeconds.toFixed(2));
 
     time.textContent = `Time left: ${currentSeconds.toFixed(1)}s`;
     progressBar.style.width = `${currentSeconds.toFixed(2) * 10}%`;
