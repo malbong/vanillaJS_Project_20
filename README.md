@@ -88,3 +88,10 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - implement infinite scrolling
 - filter post content
 - get fake post api
+
+### 12 - Typing Game: [Demo site](https://malbong.github.io/vanillaJS_Project_20/12_TypingGame/index.html)
+
+- create UI of Typing Game
+- implement an asyn API to get random words for typing
+- fetch random words without delay for UI
+- show ending and reload button

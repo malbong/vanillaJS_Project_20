@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let words = null;
   let backupWords = null;
-  const wordsCount = 5;
+  const wordsCount = 3;
 
   let timer = null;
 
@@ -24,11 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const reloadBtn = document.querySelector("#reloadBtn");
   const progressBar = document.querySelector(".progress-inner");
 
-  const setRandomWordsForBackup = async function () {
+  const getRandomWordsByAPI = async function () {
     const res = await fetch(
       `https://random-word-api.herokuapp.com/word?number=${wordsCount}`
     );
-    backupWords = await res.json();
+    const data = await res.json();
+    return data;
   };
 
   const updateTime = function () {
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     score.textContent = `Score: ${currentScore}`;
   };
 
-  const checkTypeValid = async function () {
+  const checkTypeValid = function () {
     if (words[currentIndex] !== input.value) return;
 
     input.value = "";
@@ -59,13 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentSeconds >= 10) currentSeconds = 10;
 
     if (currentIndex === wordsCount) {
-      words = backupWords;
-      currentIndex = 0;
-      setRandomWordsForBackup();
+      backupWords.then((arr) => {
+        words = arr;
+        currentIndex = 0;
+        updateScore();
+        updateTime();
+      });
+      backupWords = getRandomWordsByAPI();
+    } else {
+      updateScore();
+      updateTime();
     }
-
-    updateScore();
-    updateTime();
   };
 
   const changeDifficulty = function () {
@@ -102,9 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const difficultyValue = localStorage.getItem("difficulty");
     if (difficultyValue) difficulty.value = difficultyValue;
 
-    await setRandomWordsForBackup();
-    words = backupWords;
-    setRandomWordsForBackup();
+    words = await getRandomWordsByAPI(); // wait
+    backupWords = getRandomWordsByAPI(); // no wait
 
     updateScore();
     updateTime();
