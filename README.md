@@ -96,6 +96,12 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - fetch random words without delay for UI
 - show ending and reload button
 
+### 13 - Speech Text Reader: [Demo site](https://malbong.github.io/vanillaJS_Project_20/13_SpeechTextReader/index.html)
+
+- create a text reader app using the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API)
+- implement a grid for displaying images and text for speech
+- implement a toggle container to read other text
+
 ### 14 - Memory Cards: [Demo site](https://malbong.github.io/vanillaJS_Project_20/14_MemoryCards/index.html)
 
 - create a flip card UI with CSS.
