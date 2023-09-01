@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --white: #f7f7f7;
+  --background-color: #ffefea;
+  --base-color: #e9967a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+}
+button:active {
+  transform: scale(1.1);
+}
+#toggleBtn {
+  background-color: var(--base-color);
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+main {
+  margin: 1.5rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, auto));
+  grid-auto-rows: 250px;
+  gap: 16px;
+}
+
+.text-box {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  position: relative;
+  transition: box-shadow 0.2s linear;
+}
+.text-box.active {
+  box-shadow: 0px 0px 30px 10px var(--base-color);
+  transition: box-shadow 0.2s linear;
+}
+
+.text-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text-box p {
+  text-align: center;
+  background-color: var(--base-color);
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0;
+  color: var(--white);
+  font-size: 1.2rem;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.voice-container {
+  background-color: #333333;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s linear;
+}
+.voice-container.active {
+  transform: translateY(30vh);
+}
+.voice-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.voice-container h3 {
+  color: var(--white);
+  margin: 0;
+}
+#closeBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#voice-select {
+  background-color: var(--base-color);
+  color: white;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+#input-text {
+  height: 150px;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  background-color: var(--white);
+}
+#speakBtn {
+  background-color: var(--base-color);
+  border-radius: 0.25rem;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    grid-template-columns: minmax(250px, auto);
+  }
+}

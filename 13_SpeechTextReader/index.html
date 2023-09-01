@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speech Text Reader</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1 id="title">Speech Text Reader</h1>
+    <button id="toggleBtn">Toggle Text Box</button>
+    <main class="text-container"></main>
+    <div class="voice-container">
+      <header>
+        <h3>Choose Voice</h3>
+        <button id="closeBtn">X</button>
+      </header>
+      <select id="voice-select"></select>
+      <textarea id="input-text" placeholder="Enter text to read.."></textarea>
+      <button id="speakBtn">Read Text</button>
+    </div>
+  </body>
+</html>
