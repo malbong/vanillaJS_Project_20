@@ -108,3 +108,9 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - implement add/delete/clear buttons.
 - implement indexing navigation buttons.
 - persist memory cards to localStorage when refreshing.
+
+### 16 - Relaxer App: [Demo site](https://malbong.github.io/vanillaJS_Project_20/16_RelaxerApp/index.html)
+
+- implement CSS circle gradient
+- implement animations for the app
+- manipulate timer functions
