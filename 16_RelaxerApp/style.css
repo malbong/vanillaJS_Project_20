@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: url("./img/bg.jpg") center / cover no-repeat;
+  color: #f7f7f7;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.outer-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background-image: conic-gradient(
+    #55b7a4 0%,
+    #55b7a4 40%,
+    #f7f7f7 40%,
+    #f7f7f7 60%,
+    #336d62 60%,
+    #336d62 0%
+  );
+  position: relative;
+}
+.outer-circle.grow {
+  animation: 3s linear 1 forwards grow;
+}
+.outer-circle.shrink {
+  animation: 3s linear 1 forwards shrink;
+}
+
+.inner-circle {
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  background-color: #030303;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pointer {
+  width: 20px;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 1rem;
+
+  position: absolute;
+  left: 50%;
+
+  animation: rotate 7.5s linear infinite;
+  transform-origin: center;
+}
+
+.pointer::after {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -200%);
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .outer-circle {
+    width: 150px;
+    height: 150px;
+  }
+  .pointer::after {
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%, -150%);
+  }
+}
