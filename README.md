@@ -109,6 +109,16 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - implement indexing navigation buttons.
 - persist memory cards to localStorage when refreshing.
 
+### 15 - Lyrics Search: [Demo site](https://malbong.github.io/vanillaJS_Project_20/15_LyricsSearch/index.html)
+
+- suggest songs by input using [deezer API](https://developers.deezer.com/login?redirect=/api)
+  - the deezer API is not accessible without an account, so I searched on github to find its usage API
+- search for lyrics using [lyrist.vercel.app](https://lyrist.vercel.app/)
+- implement prev/next buttons of the music list
+  - deezer API provides a paginate URL
+- implement a return button to return from lyrics page to the original music list page
+- use the cors-proxy api to access other API without cors-policy error: [corsproxy.io](https://corsproxy.io/)
+
 ### 16 - Relaxer App: [Demo site](https://malbong.github.io/vanillaJS_Project_20/16_RelaxerApp/index.html)
 
 - implement CSS circle gradient
