@@ -124,3 +124,11 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - implement CSS circle gradient
 - implement animations for the app
 - manipulate timer functions
+
+### 17 - Breakout Game: [Demo site](https://malbong.github.io/vanillaJS_Project_20/17_BreakoutGame/index.html)
+
+- create the Breakout Game using <canvas>
+- implement pause/play buttons
+- implement the movement of the ball/paddle
+- implement animation of the canvas
+- manage ball collision with walls/paddle/bricks
