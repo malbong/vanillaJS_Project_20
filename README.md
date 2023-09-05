@@ -132,3 +132,9 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - implement the movement of the ball/paddle
 - implement animation of the canvas
 - manage ball collision with walls/paddle/bricks
+
+### 18 - New Year Countdown: [Demo site](https://malbong.github.io/vanillaJS_Project_20/18_NewYearCountdown/index.html)
+
+- create randing page for counting new year
+- calculate the days, hours, minutes, seconds using the Date object
+- display the loading image
