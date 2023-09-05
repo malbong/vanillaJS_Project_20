@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #f7f7f7;
+  overflow: hidden;
 }
 body::after {
   content: "";
