@@ -135,6 +135,6 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 
 ### 18 - New Year Countdown: [Demo site](https://malbong.github.io/vanillaJS_Project_20/18_NewYearCountdown/index.html)
 
-- create randing page for counting new year
-- calculate the days, hours, minutes, seconds using the Date object
-- display the loading image
+- create randing page for counting the New Year
+- calculate the days, hours, minutes and seconds using the Date object
+- display a loading image
