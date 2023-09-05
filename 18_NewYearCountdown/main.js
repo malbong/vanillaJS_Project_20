@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateDate = function () {
     const nowDate = new Date();
-    const newDate = new Date(`${nowDate.getFullYear() + 1}-01-01:00:00:00`);
+    const newDate = new Date(`${nowDate.getFullYear() + 1}-01-01T00:00:00`);
     const diffDate = newDate - nowDate;
 
     const d = Math.floor(diffDate / 1000 / 60 / 60 / 24);
