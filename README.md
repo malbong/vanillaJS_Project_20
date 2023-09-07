@@ -138,3 +138,10 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - create randing page for counting the New Year
 - calculate the days, hours, minutes and seconds using the Date object
 - display a loading image
+
+### 19 - Sortable List: [Demo site](https://malbong.github.io/vanillaJS_Project_20/19_SortableList/index.html)
+
+- get the top 10 of richest people using [Forbes400 API](https://forbes400.onrender.com/)
+- generate a random list DOM
+- enable users to drag/drop to match the order
+- show green/red text color of elements to indicate the correctness order
