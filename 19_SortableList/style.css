@@ -78,15 +78,3 @@ body {
 .draggable.wrong .name {
   color: #ff3838;
 }
-
-#checkBtn {
-  padding: 10px 20px;
-  border: none;
-
-  cursor: pointer;
-  background-color: #c3c7ca;
-  border-radius: 0.25rem;
-}
-#checkBtn:active {
-  transform: scale(0.97);
-}
