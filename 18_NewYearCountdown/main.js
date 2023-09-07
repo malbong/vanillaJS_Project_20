@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const s = Math.floor((diffDate / 1000) % 60);
 
     days.textContent = d;
-    hours.textContent = h < 10 ? "0" + h : h;
-    minutes.textContent = m < 10 ? "0" + m : m;
+    hours.textContent = 0 < h && h < 10 ? "0" + h : h;
+    minutes.textContent = 0 < m && m < 10 ? "0" + m : m;
     seconds.textContent = 0 < s && s < 10 ? "0" + s : s;
   };
 
