@@ -3,6 +3,10 @@
 it is mini project for Javascript
 by reference: https://github.com/bradtraversy/vanillawebprojects
 
+## END: 2023-09-07
+
+---
+
 ### 01 - Form Validator: [Demo site](https://malbong.github.io/vanillaJS_Project_20/01_FormValidator/index.html)
 
 - create form by html/css
@@ -145,3 +149,10 @@ by reference: https://github.com/bradtraversy/vanillawebprojects
 - generate a random list DOM
 - enable users to drag/drop to match the order
 - show green/red text color of elements to indicate the correctness order
+
+### 20 - Speak Number Guess: [Demo site](https://malbong.github.io/vanillaJS_Project_20/20_SpeakNumberGuess/index.html)
+
+- create the Up/Down Game using the SpeechReconition API
+- implement animations to respond to the user's speech
+- show the speech results
+- show lower/higher message when users say escape numbers

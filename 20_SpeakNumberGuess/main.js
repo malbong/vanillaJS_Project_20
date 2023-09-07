@@ -14,18 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(answerNumber);
 
   const checkResults = function (event) {
-    const speechNumber = event.results[0][0].transcript;
+    const speechNumber = Number(event.results[0][0].transcript);
 
     messageContainer.classList.add("active");
 
-    if (isNaN(Number(speechNumber))) {
+    if (isNaN(speechNumber) || speechNumber <= 0 || speechNumber > 100) {
       numberBox.textContent = event.results[0][0].transcript;
       message.textContent = "speack 1 - 100 number..";
       return;
     }
 
     numberBox.textContent = speechNumber;
-    if (Number(speechNumber) === answerNumber) {
+    if (speechNumber === answerNumber) {
       messageContainer.classList.add("answer");
       loaderContainer.classList.add("answer");
 
