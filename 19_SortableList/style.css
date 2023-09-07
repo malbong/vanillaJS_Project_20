@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: "Roboto", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list-container {
+  margin: 16px 0;
+  padding: 0;
+
+  border: 1px solid #c3c7ca;
+}
+#list-container.loading {
+  display: none;
+}
+
+.list {
+  list-style: none;
+
+  display: flex;
+}
+.list:not(:last-child) .draggable {
+  border-bottom: 1px solid #c3c7ca;
+}
+.list:not(:last-child) .number {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.number {
+  width: 60px;
+  height: 60px;
+  background-color: #c3c7ca;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.draggable {
+  padding: 15px;
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #fff;
+
+  cursor: pointer;
+}
+.draggable.dragging {
+  background-color: #fff;
+}
+.draggable.over {
+  background-color: #dddddd;
+}
+.draggable * {
+  pointer-events: none;
+}
+
+.name {
+  margin: 0 15px 0 0;
+}
+.draggable.correct .name {
+  color: #3ae375;
+}
+.draggable.wrong .name {
+  color: #ff3838;
+}
+
+#checkBtn {
+  padding: 10px 20px;
+  border: none;
+
+  cursor: pointer;
+  background-color: #c3c7ca;
+  border-radius: 0.25rem;
+}
+#checkBtn:active {
+  transform: scale(0.97);
+}
